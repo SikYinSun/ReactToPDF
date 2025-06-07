@@ -14,7 +14,7 @@ function ClientInfoForm({formData, setFormData} : Props) {
   };
 
   return (
-    <div className=" border border-black">
+    <div className="border border-black m-0">
       <h2 className="text-lg font-semibold border border-black bg-blue-300">Customer Information</h2>
 
       {/* Row 1 */}
