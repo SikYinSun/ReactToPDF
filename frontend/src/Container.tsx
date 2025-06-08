@@ -1,8 +1,10 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import './App.css'
 import type { FormData, ClientInfo, PhotoSelection } from './type';
 import ClientInfoForm from './components/ClientInfoForm';
 import PhotoSelectionForm from './components/PhotoSelectionForm';
+import { generatePDF } from './utils/generatePDF';
+
 
 function Container() {
 
@@ -16,6 +18,8 @@ function Container() {
     totalPhoto: 0,
   });
 
+  const pdfRef = useRef<HTMLDivElement>(null);
+
   const updateClientInfo = (data: Partial<ClientInfo>) => {
     setFormData((prev) => ({ ...prev, ...data}));
   };
@@ -25,19 +29,21 @@ function Container() {
   };
 
   const handleSubmit = async () => {
-    console.log('Send PDF');
-    console.log(formData);
-    
+    if (pdfRef.current) {
+      await generatePDF(pdfRef.current, 'client_form.pdf');
+    }
   };
 
   return (
-    <div className="space-y-4 max-w-2xl mx-auto">
-      <h1 className="text-2xl font-bold">Internal Order Form</h1>
-      <ClientInfoForm formData={formData} setFormData={updateClientInfo} />
-      <PhotoSelectionForm formData={formData} setFormData={updatePhotoSelection} />
-      {/* <ChecklistForm formData={formData} setFormData={setFormData} />
-      <PhotoUploadForm formData={formData} setFormData={setFormData} />
-      <SignaturePad formData={formData} setFormData={setFormData} /> */}
+    <div>
+      <div ref={pdfRef} className="space-y-4 w-[794px] mx-auto">
+        <h1 className="text-2xl font-bold">Internal Order Form</h1>
+        <ClientInfoForm formData={formData} setFormData={updateClientInfo} />
+        <PhotoSelectionForm formData={formData} setFormData={updatePhotoSelection} />
+        {/* <ChecklistForm formData={formData} setFormData={setFormData} />
+        <PhotoUploadForm formData={formData} setFormData={setFormData} />
+        <SignaturePad formData={formData} setFormData={setFormData} /> */}
+      </div>
       <button
         className="bg-blue-600 text-white py-2 px-4 rounded"
         onClick={handleSubmit}
