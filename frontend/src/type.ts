@@ -5,5 +5,12 @@ export interface ClientInfo {
   memberQty: number;
 }
 
+export interface PhotoSelection {
+  photoSelected: string[];
+  remark: string;
+  totalPhoto: number;
+}
+
 export interface FormData extends
-  ClientInfo{}
+  ClientInfo,
+  PhotoSelection {}

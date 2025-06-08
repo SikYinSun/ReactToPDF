@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import './App.css'
-import type { FormData, ClientInfo } from './type';
+import type { FormData, ClientInfo, PhotoSelection } from './type';
 import ClientInfoForm from './components/ClientInfoForm';
+import PhotoSelectionForm from './components/PhotoSelectionForm';
 
 function Container() {
 
@@ -10,10 +11,17 @@ function Container() {
     school: '',
     phoneNum: '',
     memberQty: 0,
+    photoSelected: [],
+    remark: '',
+    totalPhoto: 0,
   });
 
   const updateClientInfo = (data: Partial<ClientInfo>) => {
     setFormData((prev) => ({ ...prev, ...data}));
+  };
+
+  const updatePhotoSelection = (data: Partial<PhotoSelection>) => {
+    setFormData((prev) => ({ ...prev, ...data }));
   };
 
   const handleSubmit = async () => {
@@ -23,11 +31,11 @@ function Container() {
   };
 
   return (
-    <div className="space-y-4 p-4 max-w-2xl mx-auto">
+    <div className="space-y-4 max-w-2xl mx-auto">
       <h1 className="text-2xl font-bold">Internal Order Form</h1>
       <ClientInfoForm formData={formData} setFormData={updateClientInfo} />
-      {/* <JobDetailsForm formData={formData} setFormData={setFormData} />
-      <ChecklistForm formData={formData} setFormData={setFormData} />
+      <PhotoSelectionForm formData={formData} setFormData={updatePhotoSelection} />
+      {/* <ChecklistForm formData={formData} setFormData={setFormData} />
       <PhotoUploadForm formData={formData} setFormData={setFormData} />
       <SignaturePad formData={formData} setFormData={setFormData} /> */}
       <button
