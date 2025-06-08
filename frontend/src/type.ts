@@ -8,6 +8,8 @@ export interface ClientInfo {
 export interface PhotoSelection {
   photoSelected: string[];
   remark: string;
+  giftVideo: boolean;
+  baEffect: boolean;
   totalPhoto: number;
 }
 

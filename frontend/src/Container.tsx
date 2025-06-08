@@ -15,6 +15,8 @@ function Container() {
     memberQty: 0,
     photoSelected: [],
     remark: '',
+    giftVideo: false,
+    baEffect: false,
     totalPhoto: 0,
   });
 
@@ -35,8 +37,8 @@ function Container() {
   };
 
   return (
-    <div>
-      <div ref={pdfRef} className="space-y-4 w-[794px] mx-auto">
+    <div className='p-4'>
+      <div ref={pdfRef} className="space-y-4 w-[794px] px-2 mx-auto">
         <h1 className="text-2xl font-bold">Internal Order Form</h1>
         <ClientInfoForm formData={formData} setFormData={updateClientInfo} />
         <PhotoSelectionForm formData={formData} setFormData={updatePhotoSelection} />
