@@ -3,6 +3,7 @@ import './App.css'
 import type { FormData, ClientInfo, PhotoSelection } from './type';
 import ClientInfoForm from './components/ClientInfoForm';
 import PhotoSelectionForm from './components/PhotoSelectionForm';
+import DepartmentForm from './components/DepartmentForm';
 import { generatePDF } from './utils/generatePDF';
 
 
@@ -18,6 +19,14 @@ function Container() {
     giftVideo: false,
     baEffect: false,
     totalPhoto: 0,
+    studio: {
+      palace: false,
+      moreThan: false,
+      approved: '',
+    },
+    photograph: [],
+    design: [],
+    product: [],
   });
 
   const pdfRef = useRef<HTMLDivElement>(null);
@@ -30,6 +39,10 @@ function Container() {
     setFormData((prev) => ({ ...prev, ...data }));
   };
 
+  const updateDepartmentData = (data: Partial<FormData>) => {
+    setFormData((prev) => ({ ...prev, ...data }));
+  };
+
   const handleSubmit = async () => {
     if (pdfRef.current) {
       await generatePDF(pdfRef.current, 'client_form.pdf');
@@ -38,13 +51,13 @@ function Container() {
 
   return (
     <div className='p-4'>
-      <div ref={pdfRef} className="space-y-4 w-[794px] px-2 mx-auto">
+      <div ref={pdfRef} className="space-y-4 w-[794px] px-2 mx-auto mb-4">
         <h1 className="text-2xl font-bold">Internal Order Form</h1>
         <ClientInfoForm formData={formData} setFormData={updateClientInfo} />
         <PhotoSelectionForm formData={formData} setFormData={updatePhotoSelection} />
-        {/* <ChecklistForm formData={formData} setFormData={setFormData} />
-        <PhotoUploadForm formData={formData} setFormData={setFormData} />
-        <SignaturePad formData={formData} setFormData={setFormData} /> */}
+        {/* <ChecklistForm formData={formData} setFormData={setFormData} /> */}
+        <DepartmentForm formData={formData} setFormData={updateDepartmentData} />
+        {/* <SignaturePad formData={formData} setFormData={setFormData} /> */}
       </div>
       <button
         className="bg-blue-600 text-white py-2 px-4 rounded"

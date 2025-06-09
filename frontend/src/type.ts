@@ -13,6 +13,23 @@ export interface PhotoSelection {
   totalPhoto: number;
 }
 
+// Product Selection
+
+export interface StudioDepartment {
+  palace: boolean;
+  moreThan: boolean;
+  approved: string;
+}
+export interface DepartmentData {
+  studio: StudioDepartment;
+  photograph: string[];
+  design: string[];
+  product: string[];
+}
+
 export interface FormData extends
   ClientInfo,
-  PhotoSelection {}
+  PhotoSelection,
+  DepartmentData {
+    studio: StudioDepartment;
+  }
