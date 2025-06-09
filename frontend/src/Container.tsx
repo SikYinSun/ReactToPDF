@@ -29,7 +29,12 @@ function Container() {
       standard: false,
       highStandard: false,
     },
-    design: [],
+    design: {
+      designer: '',
+      designChecker: '',
+      standard: false,
+      highStandard: false,
+    },
     product: [],
   });
 

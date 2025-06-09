@@ -26,10 +26,17 @@ export interface PhotographyDepartment {
   standard: boolean;
   highStandard: boolean;
 }
+
+export interface DesignDepartment {
+  designer: string;
+  designChecker: string;
+  standard: boolean;
+  highStandard: boolean;
+}
 export interface DepartmentData {
   studio: StudioDepartment;
   photograph: PhotographyDepartment;
-  design: string[];
+  design: DesignDepartment;
   product: string[];
 }
 
@@ -39,4 +46,5 @@ export interface FormData extends
   DepartmentData {
     studio: StudioDepartment;
     photograph: PhotographyDepartment;
+    design: DesignDepartment;
   }

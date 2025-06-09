@@ -9,7 +9,7 @@ function PhotographyDepartmentForm({formData, setFormData} : Props) {
   return (
     <div>
       <h2 className="text-md font-semibold border border-black bg-yellow-300">Photography Department</h2>
-      <div className="flex flex-col items-center gap-1 p-1 bg-yellow-100 border border-black">
+      <div className="flex flex-col pl-2 gap-1 p-1 bg-yellow-100 border border-black">
         <label className="flex items-center gap-2">
           Photo checked by:
         </label>
@@ -29,7 +29,7 @@ function PhotographyDepartmentForm({formData, setFormData} : Props) {
           />
         </label>
         <label className="flex items-center gap-2">
-          {'>'} 120 Pcs
+          High Standards
           <input
             type="checkbox"
             checked={formData.highStandard}
