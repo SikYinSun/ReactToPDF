@@ -1,4 +1,3 @@
-import React from "react";
 import type { StudioDepartment } from "../../type";
 
 interface Props {

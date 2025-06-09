@@ -1,4 +1,3 @@
-import React from 'react';
 import type { DepartmentData, StudioDepartment} from '../type';
 import StudioDepartmentForm from './Department/StudioDepartmentForm';
 
