@@ -8,8 +8,8 @@ interface Props {
 function StudioDepartmentForm({formData, setFormData} : Props) {
   return (
     <div>
-      <h2 className="text-lg font-semibold border border-black bg-blue-300">Studio Department</h2>
-      <div className="flex flex-col items-center gap-1 p-1 bg-blue-200">
+      <h2 className="text-md font-semibold border border-black bg-blue-300">Studio Department</h2>
+      <div className="flex flex-col items-center gap-1 p-1 bg-blue-200 border border-black">
         <label className="flex items-center gap-2">
           九宮格
           <input

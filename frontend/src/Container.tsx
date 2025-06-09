@@ -24,7 +24,11 @@ function Container() {
       moreThan: false,
       approved: '',
     },
-    photograph: [],
+    photograph: {
+      photoCheck: '',
+      standard: false,
+      highStandard: false,
+    },
     design: [],
     product: [],
   });

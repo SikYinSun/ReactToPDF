@@ -20,9 +20,15 @@ export interface StudioDepartment {
   moreThan: boolean;
   approved: string;
 }
+
+export interface PhotographyDepartment {
+  photoCheck: string;
+  standard: boolean;
+  highStandard: boolean;
+}
 export interface DepartmentData {
   studio: StudioDepartment;
-  photograph: string[];
+  photograph: PhotographyDepartment;
   design: string[];
   product: string[];
 }
@@ -32,4 +38,5 @@ export interface FormData extends
   PhotoSelection,
   DepartmentData {
     studio: StudioDepartment;
+    photograph: PhotographyDepartment;
   }
