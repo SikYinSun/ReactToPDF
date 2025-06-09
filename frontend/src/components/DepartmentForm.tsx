@@ -1,7 +1,8 @@
-import type { DepartmentData, StudioDepartment, PhotographyDepartment, DesignDepartment} from '../type';
+import type { DepartmentData, StudioDepartment, PhotographyDepartment, DesignDepartment, ProductionDepartment} from '../type';
 import StudioDepartmentForm from './Department/StudioDepartmentForm';
 import PhotographyDepartmentForm from './Department/PhotographyDepartmentForm';
 import DesignDepartmentForm from './Department/DesignDepartmentForm';
+import ProductionDepartmentForm from './Department/ProdcutionDepartmentForm';
 
 interface Props {
   formData: DepartmentData;
@@ -23,10 +24,16 @@ function DepartmentForm({ formData, setFormData } : Props) {
           setFormData({ photograph: { ...formData.photograph, ...data } })
         }
       />
-      <DesignDepartmentForm
-        formData={formData.design}
-        setFormData={(data: Partial<DesignDepartment>) =>
-          setFormData({ design: { ...formData.design, ...data } })
+        <DesignDepartmentForm
+          formData={formData.design}
+          setFormData={(data: Partial<DesignDepartment>) =>
+            setFormData({ design: { ...formData.design, ...data } })
+          }
+        />
+      <ProductionDepartmentForm
+        formData={formData.product}
+        setFormData={(data: Partial<ProductionDepartment>) =>
+          setFormData({ product: { ...formData.product, ...data } })
         }
       />
     </div>

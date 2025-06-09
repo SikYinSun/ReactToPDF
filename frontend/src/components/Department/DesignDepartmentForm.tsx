@@ -8,7 +8,7 @@ interface Props {
 function DesignDepartmentForm({formData, setFormData} : Props) {
   return (
     <div>
-      <h2 className="text-md font-semibold border border-black bg-orange-300">Photography Department</h2>
+      <h2 className="text-md font-semibold border border-black bg-orange-300">Design Department</h2>
       <div className="flex flex-col gap-1 p-1 pl-2 bg-orange-100 border border-black">
         <label className="flex items-center gap-2">
           Designer:

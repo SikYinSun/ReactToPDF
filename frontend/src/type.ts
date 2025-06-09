@@ -33,11 +33,16 @@ export interface DesignDepartment {
   standard: boolean;
   highStandard: boolean;
 }
+
+export interface ProductionDepartment {
+  deliveryDate: string;
+}
+
 export interface DepartmentData {
   studio: StudioDepartment;
   photograph: PhotographyDepartment;
   design: DesignDepartment;
-  product: string[];
+  product: ProductionDepartment;
 }
 
 export interface FormData extends
@@ -47,4 +52,5 @@ export interface FormData extends
     studio: StudioDepartment;
     photograph: PhotographyDepartment;
     design: DesignDepartment;
+    product: ProductionDepartment;
   }

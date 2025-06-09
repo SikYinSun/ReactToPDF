@@ -35,7 +35,9 @@ function Container() {
       standard: false,
       highStandard: false,
     },
-    product: [],
+    product: {
+      deliveryDate: '',
+    },
   });
 
   const pdfRef = useRef<HTMLDivElement>(null);
