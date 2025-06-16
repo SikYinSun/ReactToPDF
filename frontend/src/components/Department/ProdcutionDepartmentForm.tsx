@@ -7,9 +7,9 @@ interface Props {
 
 function ProductionDepartmentForm({formData, setFormData} : Props) {
   return (
-    <div>
-      <h2 className="text-md font-semibold border border-black bg-green-300">Production Department</h2>
-      <div className="flex flex-col pl-2 gap-1 p-1 bg-green-200 border border-black">
+    <div className="flex flex-col border border-black">
+      <h2 className="text-md border-b border-black bg-green-300">Production Department</h2>
+      <div className="h-full flex flex-col pl-2 gap-1 p-1 bg-green-200">
         <label className="flex items-center gap-2">
           Delivery Date:
         </label>

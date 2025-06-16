@@ -7,9 +7,9 @@ interface Props {
 
 function PhotographyDepartmentForm({formData, setFormData} : Props) {
   return (
-    <div>
-      <h2 className="text-md font-semibold border border-black bg-yellow-300">Photography Department</h2>
-      <div className="flex flex-col pl-2 gap-1 p-1 bg-yellow-100 border border-black">
+    <div className="flex flex-col border border-black">
+      <h2 className="text-md border-b border-black bg-yellow-300">Photography Department</h2>
+      <div className="h-full flex flex-col pl-2 gap-1 p-1 bg-yellow-100">
         <label className="flex items-center gap-2">
           Photo checked by:
         </label>
